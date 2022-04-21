@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ДЗ</title>
+</head>
+<body>
+
+    <form>
+        <input type="number" class="x1" placeholder="x1" required> <br>
+        <input type="number" class="x2" placeholder="x2" required> <br>
+        <input type="number" class="y1" placeholder="y1" required> <br>
+        <input type="number" class="y2" placeholder="y2" required> <br>
+        <button class="btn">Посчитать</button>
+    </form>
+
+    <script>
+        class Constructor {
+            constructor(){
+                this.x1 = 0
+                this.x2 = 0
+                this.y1 = 0 
+                this.y2 = 0
+            }
+        }
+        class Execute extends Constructor {
+            start() {
+                
+                this.x1 = document.querySelector('.x1').value;
+                this.x2 = document.querySelector('.x2').value;
+                this.y1 = document.querySelector('.y1').value;
+                this.y2 = document.querySelector('.y2').value;
+
+                const a = Math.sqrt((this.x2-this.x1)**2 + (this.y2-this.y1)**2)
+                alert(a)
+                
+            }
+        }
+
+        document.querySelector('.btn').addEventListener('click',function(e){
+            e.preventDefault()
+            let a = new Execute()
+            a.start()
+        })
+
+
+    </script>
+</body>
+</html>
